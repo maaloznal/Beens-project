@@ -5,12 +5,13 @@ import "./App.css";
 import Cards from "./components/Cards";
 import Header from "./components/Header";
 import Search from "./components/Search";
+import Example from "./components/Example";
 // import Title from "./components/Title";
 
 type ThemeContextType = {
-  theme: string,
-  setTheme: Dispatch<React.SetStateAction<string>>
-}
+  theme: string;
+  setTheme: Dispatch<React.SetStateAction<string>>;
+};
 
 export const ThemeContext = createContext<ThemeContextType | null>(null);
 
@@ -19,12 +20,13 @@ function App() {
 
   const [filterValue, setFilterValue] = useState("");
 
-  
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
+
   return (
-    <ThemeContext.Provider value={{theme, setTheme}}>
-      <div className="container">
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      <div className={`container ${theme}`}>
         <Header />
+        <Example />
         <Search setFilterValue={setFilterValue} />
         <Cards filterValue={filterValue} />
       </div>

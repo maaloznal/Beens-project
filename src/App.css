@@ -20,6 +20,16 @@ a {
 }
 
 .container{
-  max-width: 1200px;
-  margin: auto;
+  padding: 0 auto;
+  transition: all 500ms linear;
+}
+
+.dark{
+background-color: rgb(39, 39, 39);
+color: white;
+}
+
+.light{
+background-color: beige;
+color: blue;
 }

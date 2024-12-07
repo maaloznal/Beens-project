@@ -1,0 +1,22 @@
+.container {
+  background: rgba(0 , 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.modal {
+  color: black;
+  margin: 0 auto;
+  width: 48vw;
+  height: 50vh;
+  border-radius: 10px;
+  background: white;
+  position: absolute;
+  left: 25%;
+  top: 25%;
+  transition: translate(-50%, -30%);
+}
