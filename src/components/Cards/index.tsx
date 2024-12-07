@@ -18,7 +18,7 @@ const Cards: FC<Props> = ({ filterValue }) => {
       setIsError(false);
       setIsLoading(true);
       const req = await fetch(
-        "https://jellybellywikiapi.onrender.com/api/Beans"
+        "https://jellybellywikiapi.onrender.com/api/Beans?pageIndex=1&pageSize=100"
       );
       const data = await req.json();
       setIsLoading(false);
@@ -42,11 +42,14 @@ const Cards: FC<Props> = ({ filterValue }) => {
       );
       if (newArray) {
         setUpdateBeens(newArray);
+      } else {
+        setUpdateBeens(initialBeans);
       }
       console.log("newArray", newArray);
+    } else {
+      setUpdateBeens(initialBeans);
     }
   }, [filterValue, initialBeans]);
-
   return (
     <div className={style.container}>
       {isLoading && <p>...loading</p>}
