@@ -1,3 +1,4 @@
+import SwitchTheme from "../SwitchTheme";
 import style from "./style.module.css";
 
 const Nav = () => {
@@ -8,6 +9,7 @@ const Nav = () => {
       <a>Reciptes</a>
       <a>Combinations</a>
       <a>History</a>
+      <SwitchTheme />
     </nav>
   );
 };
