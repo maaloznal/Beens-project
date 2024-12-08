@@ -4,7 +4,7 @@ import SwitchTheme from "../SwitchTheme";
 import style from "./style.module.css";
 
 const Nav = () => {
-  const [isModal, setModal] = useState(true);
+  const [isModal, setModal] = useState(false);
 
   return (
     <nav className={style.container}>
