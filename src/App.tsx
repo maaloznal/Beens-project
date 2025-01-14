@@ -1,16 +1,17 @@
-import { createContext, Dispatch, useState } from "react";
-import "./App.css";
+// import { useState } from "react";
 // import Buttons from "./components/Buttons";
 // import Counter from "./components/Counter";
-import Cards from "./components/Cards";
-import Header from "./components/Header";
-import Search from "./components/Search";
-import Example from "./components/Example";
-import useOnlineStatus from "./Hooks/useOnlineStatus";
-import useDeviceType, { DeviceType } from "./Hooks/useDeviceType";
+// import Cards from "./components/Cards";
+// import Header from "./components/Header";
+// import Search from "./components/Search";
+// import Example from "./components/Example";
+// import useOnlineStatus from "./Hooks/useOnlineStatus";
+// import useDeviceType, { DeviceType } from "./Hooks/useDeviceType";
+// import Title from "./components/Title";
+import { createContext, Dispatch } from "react";
+import "./App.css";
 import { RouterProvider } from "react-router-dom";
 import router from "./router";
-// import Title from "./components/Title";
 
 type ThemeContextType = {
   theme: string;
@@ -20,12 +21,7 @@ type ThemeContextType = {
 export const ThemeContext = createContext<ThemeContextType | null>(null);
 
 function App() {
-
-
-
-  return (
-   <RouterProvider router={router}/>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
@@ -40,8 +36,8 @@ export default App;
 // const status = useOnlineStatus();
 // console.log("status", status);
 
-
-{/* <ThemeContext.Provider value={{ theme, setTheme }}>
+{
+  /* <ThemeContext.Provider value={{ theme, setTheme }}>
 <div className={`container ${theme}`}>
   <Header />
   {windowSize === DeviceType.MOBILE && <h2>MOBILE</h2>}
@@ -51,4 +47,5 @@ export default App;
   <Search setFilterValue={setFilterValue} />
   <Cards filterValue={filterValue} />
 </div>
-</ThemeContext.Provider> */}
+</ThemeContext.Provider> */
+}
