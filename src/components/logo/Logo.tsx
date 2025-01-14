@@ -1,12 +1,13 @@
+import { Link } from "react-router-dom";
 import logo_img from "../../images/logo.png";
-import style from './style.module.css'
+import style from "./style.module.css";
 
 const Logo = () => {
   return (
-    <div className={style.logo}>
+    <Link to="/" className={style.logo}>
       <img src={logo_img} alt="Logo" />
       <span>Jelly Belly</span>
-    </div>
+    </Link>
   );
 };
 

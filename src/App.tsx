@@ -8,6 +8,8 @@ import Search from "./components/Search";
 import Example from "./components/Example";
 import useOnlineStatus from "./Hooks/useOnlineStatus";
 import useDeviceType, { DeviceType } from "./Hooks/useDeviceType";
+import { RouterProvider } from "react-router-dom";
+import router from "./router";
 // import Title from "./components/Title";
 
 type ThemeContextType = {
@@ -18,31 +20,35 @@ type ThemeContextType = {
 export const ThemeContext = createContext<ThemeContextType | null>(null);
 
 function App() {
-  // const [isVisible, setIsVisible] = useState(true);
 
-  const [filterValue, setFilterValue] = useState("");
 
-  const [theme, setTheme] = useState("dark");
-
-  const windowSize = useDeviceType();
-  console.log("windowSize", windowSize);
-
-  const status = useOnlineStatus();
-  console.log("status", status);
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      <div className={`container ${theme}`}>
-        <Header />
-        {windowSize === DeviceType.MOBILE && <h2>MOBILE</h2>}
-        {windowSize === DeviceType.TABLET && <h2>TABLET</h2>}
-        {windowSize === DeviceType.DESKTOP && <h2>DESKTOP</h2>}
-        <Example />
-        <Search setFilterValue={setFilterValue} />
-        <Cards filterValue={filterValue} />
-      </div>
-    </ThemeContext.Provider>
+   <RouterProvider router={router}/>
   );
 }
 
 export default App;
+
+// const [filterValue, setFilterValue] = useState("");
+
+// const [theme, setTheme] = useState("dark");
+
+// const windowSize = useDeviceType();
+// console.log("windowSize", windowSize);
+
+// const status = useOnlineStatus();
+// console.log("status", status);
+
+
+{/* <ThemeContext.Provider value={{ theme, setTheme }}>
+<div className={`container ${theme}`}>
+  <Header />
+  {windowSize === DeviceType.MOBILE && <h2>MOBILE</h2>}
+  {windowSize === DeviceType.TABLET && <h2>TABLET</h2>}
+  {windowSize === DeviceType.DESKTOP && <h2>DESKTOP</h2>}
+  <Example />
+  <Search setFilterValue={setFilterValue} />
+  <Cards filterValue={filterValue} />
+</div>
+</ThemeContext.Provider> */}

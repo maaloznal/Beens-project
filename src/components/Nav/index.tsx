@@ -2,19 +2,20 @@ import { useState } from "react";
 import Modal from "../Modal";
 import SwitchTheme from "../SwitchTheme";
 import style from "./style.module.css";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [isModal, setModal] = useState(false);
 
   return (
     <nav className={style.container}>
-      <a>Beans</a>
-      <a>Facts</a>
-      <a>Reciptes</a>
-      <a>Combinations</a>
-      <a>History</a>
+      <Link to="/beans">Beans</Link>
+      <Link to="/facts">Facts</Link>
+      <Link to="/reciptes">Reciptes</Link>
+      <Link to="/combinations">Combinations</Link>
+      <Link to="/history">History</Link>
       <SwitchTheme />
-      <Modal isModal={isModal} onClick={()=>setModal(false)}/>
+      <Modal isModal={isModal} onClick={() => setModal(false)} />
     </nav>
   );
 };
