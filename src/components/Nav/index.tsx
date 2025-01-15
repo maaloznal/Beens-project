@@ -14,6 +14,7 @@ const Nav = () => {
       <Link to="/reciptes">Reciptes</Link>
       <Link to="/combinations">Combinations</Link>
       <Link to="/history">History</Link>
+      <Link to="/bean">Bean</Link>
       <SwitchTheme />
       <Modal isModal={isModal} onClick={() => setModal(false)} />
     </nav>
