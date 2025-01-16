@@ -8,7 +8,12 @@ type FormType = {
 };
 
 const Review: React.FC = () => {
-  const { register, handleSubmit } = useForm<FormType>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormType>();
+  console.log(errors);
 
   const onSubmit: SubmitHandler<FormType> = (data) => {
     console.log(data);
@@ -16,11 +21,20 @@ const Review: React.FC = () => {
 
   return (
     <form className={s.formReview} onSubmit={handleSubmit(onSubmit)}>
-      <input id="user_name" type="text" {...register("user_name")} />
       <label htmlFor="user_name">Имя</label>
+      <input
+        id="user_name"
+        type="text"
+        {...register("user_name", {
+          required: { value: true, message: "Обязательное поле" },
+          minLength: { value: 3, message: "Недостаточно символов" },
+        })}
+      />
+
+      {errors.user_name && <p>{errors.user_name.message}</p>}
 
       <label>
-        <input type="email" {...register("user_email")} /> Email
+        Email <input type="email" {...register("user_email")} />
       </label>
 
       <input type="submit" />
