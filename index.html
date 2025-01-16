@@ -11,12 +11,5 @@
   <body>
     <div id="root"></div>
     <div id="modal"></div>
-    <script>
-      if (sessionStorage.redirect) {
-        const redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        window.history.replaceState(null, null, redirect);
-      }
-    </script>
   </body>
 </html>
