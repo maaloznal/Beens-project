@@ -3,6 +3,7 @@ export interface ApiResponse {
   pageSize: number;
   currentPage: number;
   totalPages: number;
+  items: FactItem[];
 }
 
 export interface FactItem {
