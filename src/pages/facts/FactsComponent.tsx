@@ -7,7 +7,7 @@ const FactsComponent: FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchFacts = async (): Promise<void> => {
+  const fetchFacts = async () => {
     try {
       const res: Response = await fetch(
         "https://jellybellywikiapi.onrender.com/api/facts"

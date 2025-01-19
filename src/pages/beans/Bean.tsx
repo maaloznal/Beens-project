@@ -6,7 +6,16 @@ const Beans = () => {
   const [filterValue, setFilterValue] = useState("");
   return (
     <div>
-      <h1>Beans</h1>
+      <h1
+        style={{
+          textAlign: "center",
+          fontFamily: "Lobster",
+          color: "red",
+          fontSize: "48px",
+        }}
+      >
+        Explore All Beans ...
+      </h1>
       <Search setFilterValue={setFilterValue} />
       <Cards filterValue={filterValue} />
     </div>

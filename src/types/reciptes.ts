@@ -7,7 +7,12 @@ export interface ApiReciptes {
 }
 
 export interface ReciptesItems {
+  recipeId: number;
   imageUrl: string;
   name: string;
   description: string;
+  prepTime: string;
+  cookTime: string;
+  totalTime: string;
+  makingAmount: string;
 }
