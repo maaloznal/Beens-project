@@ -4,11 +4,11 @@ import Home from "./pages/home/Home";
 import HistoryPage from "./pages/HistoryPage/HistoryPage";
 import Combinations from "./pages/combinations/Combinations";
 import Reciptes from "./pages/recipies/Reciptes";
-import Facts from "./pages/facts/Facts";
 import Loader from "./components/Loader/Loader";
 import BeanPage from "./pages/beanPage/BeanPage";
 import Beans from "./pages/beans/Bean";
 import Review from "./pages/Reviwe/Review";
+import FactsComponent from "./pages/facts/FactsComponent";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       {
         path: "facts",
-        element: <Facts />,
+        element: <FactsComponent />,
       },
       {
         path: "review",

@@ -1,5 +1,6 @@
 import { useState, FC, useEffect } from "react";
 import { FactItem, ApiResponse } from "../../types/facts";
+import styles from "./styles.module.css"; // Импорт стилей
 
 const FactsComponent: FC = () => {
   const [data, setData] = useState<null | ApiResponse>(null);
@@ -9,7 +10,7 @@ const FactsComponent: FC = () => {
   const fetchFacts = async (): Promise<void> => {
     try {
       const res: Response = await fetch(
-        "https://jellybellywikiapi.onrender.com/api/facts?title=Popularity%20of%20Flavors"
+        "https://jellybellywikiapi.onrender.com/api/facts"
       );
       const result: ApiResponse = await res.json();
       setData(result);
@@ -26,21 +27,24 @@ const FactsComponent: FC = () => {
   }, []);
 
   if (isLoading) {
-    return <div>Загрузка..</div>;
+    return <div className={styles.loading}>Загрузка...</div>;
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return <div className={styles.error}>{error}</div>;
   }
 
   return (
     <div>
-      {data?.items.map((item: FactItem) => (
-        <div key={item.factId}>
-          <h2>{item.title}</h2>
-          <p>{item.description}</p>
-        </div>
-      ))}
+      <h1 className={styles.title}>Facts</h1>
+      <div className={styles.cardContainer}>
+        {data?.items.map((item: FactItem) => (
+          <div key={item.factId} className={styles.card}>
+            <h2>{item.title}</h2>
+            <p>{item.description}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
