@@ -15,7 +15,7 @@ const Reciptes: FC = () => {
       const result = await response.json();
       setData(result);
     } catch (error) {
-      console.log(error);
+      console.error(error);
       setError("Ошибка получения данных");
     } finally {
       setIsLoading(false);
