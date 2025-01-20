@@ -17,14 +17,14 @@
   margin-bottom: 20px auto;
 }
 
-.bean-card h1 {
+.beanCard h1 {
   font-size: 2rem;
-  color: #333;
+  color: #996e6e;
   margin-bottom: 10px;
 }
 
-.bean-card p {
+.beanCard p {
   font-size: 1rem;
-  color: #666;
+  color: #996e6e;
   line-height: 1.5;
 }
