@@ -1,17 +1,25 @@
 import { useContext } from "react";
+import style from "./style.module.css";
 import { ThemeContext } from "../../App";
 
 const SwitchTheme = () => {
-  const currentTheme = useContext(ThemeContext)
-  console.log("currentTheme", currentTheme);
-  const handleClick = () => {
-    if (currentTheme?.theme === 'dark') {
-      currentTheme.setTheme('light')
-    } else {
-      currentTheme?.setTheme('dark')
-    }
+  const themeContext = useContext(ThemeContext);
+
+  if (!themeContext) {
+    return null; 
   }
-  return <div onClick={handleClick}>{currentTheme?.theme}</div>;
+
+  const { theme, setTheme } = themeContext;
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+  return (
+    <button onClick={toggleTheme} className={style.themeButton}>
+      {theme === "dark" ? "🌞" : "🌙"}
+    </button>
+  );
 };
 
 export default SwitchTheme;

@@ -19,17 +19,18 @@ a {
   src: url("./fonts/Lobster.otf");
 }
 
-.container{
-  padding: 0 auto;
+.container {
+  padding: 20px;
+  min-height: 100vh;
   transition: all 500ms linear;
 }
 
-.dark{
-background-color: rgb(39, 39, 39);
-color: white;
+.container.dark {
+  background-color: #121212;
+  color: #ffffff;
 }
 
-.light{
-background-color: beige;
-color: blue;
+.container.light {
+  background-color: #ffffff;
+  color: #000000;
 }

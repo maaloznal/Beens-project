@@ -9,47 +9,54 @@ import BeanPage from "./pages/beanPage/BeanPage";
 import Beans from "./pages/beans/Bean";
 import Review from "./pages/Reviwe/Review";
 import FactsComponent from "./pages/facts/FactsComponent";
+import About from "./pages/about/About";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Layout />,
+      loader: Loader,
+      children: [
+        { index: true, element: <Home /> },
+        {
+          path: "facts",
+          element: <FactsComponent />,
+        },
+        {
+          path: "review",
+          element: <Review />,
+        },
+        {
+          path: "beanPage/:id",
+          element: <BeanPage />,
+        },
+        {
+          path: "beans",
+          element: <Beans />,
+        },
+        {
+          path: "reciptes",
+          element: <Reciptes />,
+        },
+        {
+          path: "combinations",
+          element: <Combinations />,
+        },
+        {
+          path: "history",
+          element: <HistoryPage />,
+        },
+        {
+          path: "about",
+          element: <About />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <Layout />,
-    loader: Loader,
-    children: [
-      { index: true, element: <Home /> },
-      {
-        path: "facts",
-        element: <FactsComponent />,
-      },
-      {
-        path: "review",
-        element: <Review />,
-      },
-      {
-        path: "beanPage/:id",
-        element: <BeanPage />,
-      },
-      {
-        path: "beans",
-        element: <Beans />,
-      },
-      {
-        path: "reciptes",
-        element: <Reciptes />,
-      },
-      {
-        path: "combinations",
-        element: <Combinations />,
-      },
-      {
-        path: "history",
-        element: <HistoryPage />,
-      },
-      {
-        
-      },
-    ],
-  },
-]);
+    basename: "/Beens-project-REACT-route", 
+  }
+);
 
 export default router;

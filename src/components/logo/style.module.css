@@ -4,6 +4,7 @@
   align-items: center;
   gap: 20px;
   color: red;
+  margin: 0;
 }
 
 .logo img {
