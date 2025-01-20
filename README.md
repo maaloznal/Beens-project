@@ -1,50 +1,54 @@
-# React + TypeScript + Vite
+# Jelly Belly App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание
 
-Currently, two official plugins are available:
+Jelly Belly App — это интерактивное веб-приложение, посвященное бренду Jelly Belly. Оно предоставляет пользователям информацию о различных продуктах, фактах, комбинациях вкусов и истории компании. Приложение разработано на основе существующего проекта и включает в себя новые страницы и функциональность, что делает его более информативным и удобным для пользователей.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Задачи
 
-## Expanding the ESLint configuration
+### Создание страниц
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Facts**: Страница с интересными фактами о Jelly Belly.
+- **Combinations**: Страница с предложениями по комбинированию различных вкусов.
+- **History**: Страница, посвященная истории бренда.
+- **About**: Страница с информацией о компании и ее миссии.
+- **Review**: Страница, где пользователи могут оставлять свои отзывы о продуктах.
 
-- Configure the top-level `parserOptions` property like this:
+### Функциональность
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Реализована динамическая загрузка контента с использованием API.
+- Настроена навигация между страницами с помощью `react-router-dom`.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Стилизация
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- Использование CSS-модулей для обеспечения уникальности классов и разделения стилей.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Адаптивный дизайн
+
+- Реализовано бургер-меню для навигации на мобильных устройствах, что улучшает пользовательский интерфейс.
+
+### Темы
+
+- Добавлен функционал смены темы (светлая/темная) с использованием контекста.
+
+## Дополнительные задачи
+
+- Реализован функционал смены темы, что не было указано в исходных требованиях.
+- Реализован поиск товара на странице Beans
+- Создан компонент для отображения отдельной карточки Bean при нажатии
+
+## Используемые технологии
+
+- **React**: Основной фреймворк для разработки пользовательского интерфейса.
+- **react-router-dom**: Библиотека для управления маршрутизацией в приложении.
+- **CSS-модули**: Используются для стилизации компонентов и обеспечения уникальности классов.
+- **API**: Данные загружаются с использованием API для динамической подгрузки контента.
+- **TypeScript**: Используется для обеспечения типовой безопасности и повышения надежности кода.
+
+## Задеплоенный проект
+
+Проект задеплоен и доступен по ссылке: [Beens Project](https://maaloznal.github.io/Beens-project-REACT-route/)
+
+## Заключение
+
+Jelly Belly App предлагает пользователям удобный и интуитивно понятный интерфейс для получения информации о продуктах Jelly Belly. Реализованные функции и технологии делают приложение современным и функциональным, что способствует улучшению пользовательского опыта. Если у вас есть дополнительные вопросы или пожелания, дайте знать!
