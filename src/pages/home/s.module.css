@@ -1,0 +1,52 @@
+.homeContainer {
+  height: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+.homeContainer img {
+  height: 80%;
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+}
+
+.homeContainer img:hover {
+  animation: favicon-shake 0.7s ease-in-out 2 alternate;
+}
+
+.info {
+  width: 40%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  & h1 {
+    margin: 50px 0;
+    font-size: 48px;
+    text-align: center;
+    font-family: Lobster;
+    color: red;
+  }
+  & p {
+    color: red;
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+@keyframes favicon-shake {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}

@@ -45,6 +45,9 @@ const router = createBrowserRouter([
         path: "history",
         element: <HistoryPage />,
       },
+      {
+        
+      },
     ],
   },
 ]);
