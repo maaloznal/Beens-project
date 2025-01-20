@@ -5,11 +5,8 @@
 }
 
 .container input {
-  width: 300px;
   height: inherit;
   border-radius: 180px;
-  margin-right: 20px;
-  padding-left: 10px;
 }
 
 .container button {

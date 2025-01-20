@@ -21,6 +21,7 @@ const Nav = () => {
 
   return (
     <nav className={style.container}>
+      <SwitchTheme />
       {isMobile ? (
         <>
           <div className={style.burger} onClick={toggleMenu}>
@@ -53,7 +54,7 @@ const Nav = () => {
         </>
       ) : (
         <>
-          <SwitchTheme />
+          
           <Link to="/beans">Beans</Link>
           <Link to="/facts">Facts</Link>
           <Link to="/reciptes">Reciptes</Link>
@@ -62,7 +63,9 @@ const Nav = () => {
           <Link to="/about">About</Link>
         </>
       )}
+      
     </nav>
+    
   );
 };
 
